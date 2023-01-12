@@ -1,0 +1,68 @@
+
+import { extendTheme } from '@chakra-ui/react'
+
+
+export const theme = extendTheme({
+    styles: {
+        colors: {
+            brand: {
+                '100': 'red',//'#F7F7F7',
+                '200': '#F2E7D5',
+                '300': '#6D9886',
+                '400': '#393E46',
+            }
+        },
+        /*global: (props) => ({
+            'html, body': {
+                fontSize: ['sm', 'md', 'lg'],
+                gap: [2, 3, 5],
+                //color: props.colorMode === 'dark' ? 'white' : 'gray.600',
+                lineHeight: 'tall',
+                bg: 'whiteAlpha.200',
+
+            },
+            a: {
+                mr: 5,
+                _hover:{ color: 'teal.400' },
+                
+                //color: props.colorMode === 'dark' ? 'teal.300' : 'teal.500',
+
+            },
+           
+            
+            layerStyles: {
+                bg: '#F7F7F7',
+                color: '#393E46',
+            }
+        }),*/
+    },
+})
+
+export const newTheme = extendTheme({
+    global: (props) => ({
+        'html, body': {
+            fontSize: ['sm', 'md', 'lg'],
+            gap: [2, 3, 5],
+            //color: props.colorMode === 'dark' ? 'white' : 'gray.600',
+            lineHeight: 'tall',
+           // color: ['#F7F7F7', '#F2E7D5', '#6D9886', '#393E46' ]
+
+        }
+    }),
+    colors: {
+        brand: {
+            100: '#F7F7F7', //lightGrey
+            200: '#F2E7D5', //cream
+            300: '#6D9886', //darkGreen
+            400: '#393E46', //darkGrey
+        },
+    },
+    textStyles: {
+        p: {
+            fontSize: ['14px', '20px'],
+            fontWeight: 'normal',
+            //lineHeight: '110%',
+            //letterSpacing: '-2%',
+        },
+    }
+})
