@@ -1,5 +1,5 @@
 import React
-//{ Provider }
+  //{ Provider }
   from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -8,20 +8,20 @@ import { App } from './App';
 import { ChakraProvider } from '@chakra-ui/react'
 import { newTheme } from './Style';
 
-//import { Provider } from 'react-redux';
-//import { PersistGate } from 'redux-persist/integration/react';
-//import { store, persistor } from './redux/config';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './redux/config';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/*<Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>*/}
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
         <ChakraProvider theme={newTheme}>
           <App />
         </ChakraProvider>
-    {/*</PersistGate>
-    </Provider>*/}
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
 

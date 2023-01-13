@@ -1,23 +1,24 @@
 import {
-    //combineReducers,
-    //configureStore
+    combineReducers,
+    configureStore
 } from '@reduxjs/toolkit';
-//import { persistReducer, persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
-//import { setupListeners } from '@reduxjs/toolkit/dist/query';
-//import storage from 'redux-persist/lib/storage';
+import { persistReducer, persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
+import storage from 'redux-persist/lib/storage';
+import { userReducer } from './slice'
 
-/*const authPersistConfig = {
-    key: 'auth',
+const persistConfig = {
+    key: 'root',
     storage,
-    whitelist: ['token'],
-};*/
+}
 
 
-//const rootReducer = combineReducers({
-    //auth: persistReducer(authPersistConfig, authReducer),
-//});
+const rootReducer = combineReducers({
+    user: persistReducer(persistConfig, userReducer),
+});
 
-/*export const store = configureStore({
+
+export const store = configureStore({
     reducer: rootReducer,
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({
@@ -29,4 +30,4 @@ import {
 
 export const persistor = persistStore(store);
 
-setupListeners(store.dispatch);  */
+setupListeners(store.dispatch);  

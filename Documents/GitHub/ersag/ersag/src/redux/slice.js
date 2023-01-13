@@ -1,40 +1,36 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
+/*import {
     handleAddToBasket,
     handleDeleteFromBasket,
-    handleAddToLikes,
+    //handleAddToLikes,
     handleDeleteFromLikes,
     handleGetLikes,
     handleGetBasket,
-} from "./handlers";
-import { addToBasket, addToLikes, deleteFromLikes, getLikes, deleteFromBasket, getBasket } from "./opertions";
+} from "./handlers";*/
+/*import {
+    addToBasket,
+    //addToLikes,
+    deleteFromLikes, getLikes, deleteFromBasket, getBasket
+} from "./opertions";*/
 
 
 const initialState = {
-    //date: null,
     likes: [],
     basket: [],
-    auth: false,
-    //isLoading: false,
-    //error: null,
 };
 
-export const authReducer = createSlice({
+export const userSlice = createSlice({
     name: 'user',
     initialState,
-    /*reducers: {
-        resetDailyDiary: handleResetDailyDiary,
-    },*/
-    extraReducers: builder => {
-        builder
-            .addCase(addToLikes.fulfilled, handleAddToLikes)
-            .addCase(deleteFromLikes.fulfilled, handleDeleteFromLikes)
-            .addCase(getLikes.fulfilled, handleGetLikes)
-            .addCase(addToBasket.fulfilled, handleAddToBasket)
-            .addCase(deleteFromBasket.fulfilled, handleDeleteFromBasket)
-            .addCase(getBasket.fulfilled, handleGetBasket)
-            //.addMatcher(action => action.type.endsWith('/pending'), handlePending)
-           // .addMatcher(action => action.type.endsWith('/fulfilled'), handleFulfilled)
-           // .addMatcher(action => action.type.endsWith('/rejected'), handleRejected);
+    reducers: {
+        addToLikes(state, action) {
+            state.likes.push(action.payload);
+        },
+        deleteFromLikes(state, action) {
+
+        },
     },
 });
+
+export const { addToLikes } = userSlice.actions;
+export const userReducer = userSlice.reducer

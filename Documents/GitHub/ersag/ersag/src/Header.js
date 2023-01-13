@@ -49,7 +49,7 @@ export const HeaderMobile = (props) => {
             display='flex'
             {...props}
         >
-            <Image src='logo.jfif' w={['50px', '75px']} ></Image>
+            <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
 
             <Button ref={btnRef}
                 as={IconButton}
@@ -106,7 +106,7 @@ const HeaderDesktop = (props) => {
         <Box textStyle='p' {...props} bg='brand.100'>
             <Box w='100%' pos='fixed' as="header" bg="brand.300" color='brand.200' zIndex='200'>
                 <Box display='flex' alignItems='center' gridGap={['10px', '20px']} maxW='1440px'>
-                    <Image src='logo.jfif' w={['50px', '75px']} ></Image>
+                    <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
                     <Box display='flex' gridGap={[2, 4]} w='100%'>
                         <Link href='' >Home</Link>
                         <Link href='' >Продукти</Link>

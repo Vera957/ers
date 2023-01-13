@@ -13,7 +13,7 @@ export const CardHolder = ({ source: { i, n, u, p, d } }) => {
                 alt='damla-500'
             />
             <Stack mt='6' spacing='3' color='brand.300'>
-                <Heading fontSize={['10px', '20px']}>{n}</Heading>
+                <Heading fontSize={['14px', '20px']}>{n}</Heading>
                 <Text><b>Опис: </b>
                     {d}
                 </Text>

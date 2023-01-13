@@ -37,7 +37,7 @@ export const ModalCalc = (props) => {
             variant='link'
             textStyle='inherit'
             mr = '1rem'
-            leftIcon={<SlBasket boxSize={['14px', '20px']} />}
+            lefticon={<SlBasket boxSize={['14px', '20px']} />}
         ><Icon as={SlBasket}></Icon> Кошик
         </Link>
 
