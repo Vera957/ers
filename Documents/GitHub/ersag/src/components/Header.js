@@ -1,7 +1,6 @@
 
 import {
     Box,
-    Link,
     Image,
     IconButton,
     Spacer,
@@ -9,18 +8,23 @@ import {
     DrawerCloseButton, DrawerBody,
     useDisclosure,
     List, ListItem,
+    Container,
 } from "@chakra-ui/react"
-import { ModalCalc } from "./ModalCalc"
+import { ModalCalc } from "../ModalCalc"
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { useBreakpoints } from './mediaQuery'
+import { useBreakpoints } from '../mediaQuery'
 import { useRef } from "react"
-
+import { useDispatch } from "react-redux"
+import { resetAll } from '../redux/slice'
+import {
+    Link,
+} from 'react-router-dom'
 export const Header = () => {
     const x = useBreakpoints()
-    console.log('isLaptop, isMobile', x.isLaptop, x.isMobile)
     return (<>
         {x.isMobile && (<HeaderMobile />)}
-        {x.isTablet && (<HeaderDesktop />)}</>
+        {x.isTablet && (<HeaderDesktop />)}
+    </>
     )
 }
 
@@ -37,6 +41,8 @@ const breakpoints = {
 export const HeaderMobile = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
+    const dispatch = useDispatch()
+
     return (<>
         <Box textStyle='p'
             className='mdx-prose'
@@ -50,6 +56,8 @@ export const HeaderMobile = (props) => {
             {...props}
         >
             <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
+            <Button bg='red.400' onClick={() => dispatch(resetAll())}>reset</Button>
+
 
             <Button ref={btnRef}
                 as={IconButton}
@@ -76,23 +84,16 @@ export const HeaderMobile = (props) => {
                     <DrawerBody>
                         <List spacing={3}>
                             <ListItem>
-                                <Link href='' >Продукти</Link>
+                                <Link to='/wishlist' >Бажане</Link>
                             </ListItem>
                             <ListItem>
-                                <Link href='' >Виробник</Link>
+                                <Link to='/producer' >Виробник</Link>
                             </ListItem>
                             <ListItem>
                                 <ModalCalc />
                             </ListItem>
                         </List>
                     </DrawerBody>
-
-                    {/*<DrawerFooter>
-                        <Button variant='outline' mr={3} onClick={onClose}>
-                            Cancel
-                        </Button>
-                        <Button colorScheme='blue'>Save</Button>
-    </DrawerFooter>*/}
                 </DrawerContent>
             </Drawer>
         </Box>
@@ -102,20 +103,24 @@ export const HeaderMobile = (props) => {
 
 
 const HeaderDesktop = (props) => {
+    const dispatch = useDispatch()
+
     return (<>
-        <Box textStyle='p' {...props} bg='brand.100'>
+        <Box bg='brand.100'>
             <Box w='100%' pos='fixed' as="header" bg="brand.300" color='brand.200' zIndex='200'>
-                <Box display='flex' alignItems='center' gridGap={['10px', '20px']} maxW='1440px'>
+                <Container display='flex' alignItems='center' gridGap={['10px', '20px']} maxW='5xl'>
                     <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
                     <Box display='flex' gridGap={[2, 4]} w='100%'>
-                        <Link href='' >Home</Link>
-                        <Link href='' >Продукти</Link>
-                        <Link href='' >Home</Link>
-                        <Link href='' >Виробник</Link>
+                        <Button bg='red.400' onClick={() => dispatch(resetAll())}>reset</Button>
+
+                        <Link to='/' >Продукти</Link>
+                        <Link to='/producer' >Виробник</Link>
+                        <Link to='/wishlist' >Бажане</Link>
+                        <Link to='/basket' >Корзина</Link>
                         <Spacer />
                         <ModalCalc />
                     </Box>
-                </Box>
+                </Container>
             </Box>
         </Box>
     </>)
