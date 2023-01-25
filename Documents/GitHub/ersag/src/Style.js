@@ -2,8 +2,19 @@
 import { extendTheme } from '@chakra-ui/react'
 
 
-export const theme = extendTheme({
+/*export const theme = extendTheme({
     styles: {
+        global: {
+            'html, body': {
+                color: 'red',
+                //lineHeight: 'tall',
+            },
+            a: {
+                color: 'teal.500',
+            },
+        },
+    },
+    /*styles: {
         colors: {
             brand: {
                 '100': 'red',//'#F7F7F7',
@@ -11,7 +22,7 @@ export const theme = extendTheme({
                 '300': '#6D9886',
                 '400': '#393E46',
             }
-        },
+        },*/
         /*global: (props) => ({
             'html, body': {
                 fontSize: ['sm', 'md', 'lg'],
@@ -35,20 +46,21 @@ export const theme = extendTheme({
                 color: '#393E46',
             }
         }),*/
-    },
-})
+   // },
+//})*/
 
 export const newTheme = extendTheme({
-    global: (props) => ({
-        'html, body': {
-            fontSize: ['sm', 'md', 'lg'],
-            gap: [2, 3, 5],
-            //color: props.colorMode === 'dark' ? 'white' : 'gray.600',
-            lineHeight: 'tall',
-           // color: ['#F7F7F7', '#F2E7D5', '#6D9886', '#393E46' ]
-
-        }
-    }),
+    styles: {
+        global: {
+            'html, body': {
+                color: 'brand.300',
+                bg: 'brand.100',
+            },
+            a: {
+                color: 'teal.500',
+            },
+        },
+    },
     colors: {
         brand: {
             100: '#F7F7F7', //lightGrey

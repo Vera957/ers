@@ -16,14 +16,14 @@ import { SlBasket } from "react-icons/sl"
 //SlBasketLoaded
 //import { useRef } from 'react'
 import { Icon } from '@chakra-ui/react'
-import { useBreakpoints } from './mediaQuery'
+//import { useBreakpoints } from './mediaQuery'
 
 
 
 
 export const ModalCalc = (props) => {
-    const x = useBreakpoints()
-    console.log('x.isMobile', x.isMobile)
+    //const x = useBreakpoints()
+    //console.log('x.isMobile', x.isMobile)
 
     const { isOpen, onClose,
         onOpen,
