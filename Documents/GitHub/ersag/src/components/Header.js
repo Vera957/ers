@@ -2,6 +2,7 @@
 import {
     Box,
     Image,
+    Icon,
     IconButton,
     Spacer,
     Button, Drawer, DrawerOverlay, DrawerContent,
@@ -10,12 +11,14 @@ import {
     List, ListItem,
     Container,
 } from "@chakra-ui/react"
-import { ModalCalc } from "../ModalCalc"
+import { ModalCalc } from "./ModalCalc"
+import { SlHeart } from "react-icons/sl"
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useBreakpoints } from '../mediaQuery'
 import { useRef } from "react"
 import { useDispatch } from "react-redux"
 import { resetAll } from '../redux/slice'
+import { GiLaurels } from 'react-icons/gi'
 import {
     Link,
 } from 'react-router-dom'
@@ -28,24 +31,14 @@ export const Header = () => {
     )
 }
 
-/*
-const breakpoints = {
-  sm: '30em',
-  md: '48em',
-  lg: '62em',
-  xl: '80em',
-  '2xl': '96em',
-}*/
-
-
 export const HeaderMobile = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
     const dispatch = useDispatch()
 
     return (<>
-        <Box textStyle='p'
-            className='mdx-prose'
+        <Box 
+           // className='mdx-prose'
             as="header"
             bg="brand.300"
             color='brand.200'
@@ -84,10 +77,15 @@ export const HeaderMobile = (props) => {
                     <DrawerBody>
                         <List spacing={3}>
                             <ListItem>
-                                <Link to='/wishlist' >Бажане</Link>
+                                <Link to='/wishlist' >
+                                     <Icon as={SlHeart} /> 
+                                </Link>
                             </ListItem>
                             <ListItem>
                                 <Link to='/producer' >Виробник</Link>
+                            </ListItem>
+                            <ListItem>
+                                
                             </ListItem>
                             <ListItem>
                                 <ModalCalc />
@@ -111,12 +109,10 @@ const HeaderDesktop = (props) => {
                 <Container display='flex' alignItems='center' gridGap={['10px', '20px']} maxW='5xl'>
                     <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
                     <Box display='flex' gridGap={[2, 4]} w='100%'>
-                        <Button bg='red.400' onClick={() => dispatch(resetAll())}>reset</Button>
-
+                        <Button bg='red.400' variant='link' onClick={() => dispatch(resetAll())}>reset</Button>
                         <Link to='/' >Продукти</Link>
-                        <Link to='/producer' >Виробник</Link>
-                        <Link to='/wishlist' >Бажане</Link>
-                        <Link to='/basket' >Корзина</Link>
+                        <Link to='/producer' ><Icon as={GiLaurels} />Виробник</Link>
+                        <Link to='/wishlist' ><Icon as={SlHeart } />Бажане</Link>
                         <Spacer />
                         <ModalCalc />
                     </Box>

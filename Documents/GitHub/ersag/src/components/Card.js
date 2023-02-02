@@ -5,39 +5,46 @@ import {
     //useDisclosure,
 } from '@chakra-ui/react'
 import { SlBasket, SlHeart } from 'react-icons/sl'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addToLikes, addToBasket } from '../redux/slice'
-import { source } from '../source'
+//import { useState } from 'react'
+import { basket, likes } from '../redux/selectors'
 
 export const CardHolder = ({ item }) => {
     const { img, name, id } = item
+    const basketed = useSelector(basket).filter(e => e.id === id)?.length > 0 ? 'brand.200' : 'inherit'
+    const liked = useSelector(likes).filter(e => e === id)?.length > 0 ? 'brand.200' : 'inherit'
+    
     const dispatch = useDispatch()
     return (<Card bg='whiteAlpha.800'>
         <Link to={`/product/${id}`}>
-        <CardBody >
-            <Image
-                src={img}
-                alt='damla-500'
-            />
-            <Text as='h2'>{name}</Text>
+            <CardBody >
+                <Image
+                    src={img}
+                    alt='damla-500'
+                />
+                <Text as='h2' h='3em' textAlign='center' mt={[2, 4]}>{name}</Text>
             </CardBody>
         </Link>
         <Divider />
         <CardFooter>
-            <ButtonGroup >
-                <IconButton icon={<SlBasket />} onClick={() => dispatch(addToBasket(id))} />
-                <IconButton icon={<SlHeart />} onClick={() => dispatch(addToLikes(id))} />
+            <ButtonGroup ml='auto' mr='auto'>
+                <IconButton icon={<SlBasket />} onClick={() => dispatch(addToBasket(id))}
+                bg={basketed}
+                />
+                <IconButton icon={<SlHeart />} onClick={() => dispatch(addToLikes(id))}
+                    bg={liked} />
             </ButtonGroup>
         </CardFooter>
     </Card>
     )
 }
 
-export const CardList = () => {
+export const CardList = ({ source }) => {
     return (<>
         <Grid
-            gridGap={[2,3]}
+            gridGap={[2, 3]}
             templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(2, 1fr)',
                 'repeat(3, 1fr)'
             ]}

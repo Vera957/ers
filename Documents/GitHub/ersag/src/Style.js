@@ -56,17 +56,17 @@ export const newTheme = extendTheme({
                 color: 'brand.300',
                 bg: 'brand.100',
             },
-            a: {
-                color: 'teal.500',
-            },
+           /* a: {
+                color: 'brand.400',
+            },*/
         },
     },
     colors: {
         brand: {
-            100: '#F7F7F7', //lightGrey
-            200: '#F2E7D5', //cream
-            300: '#6D9886', //darkGreen
-            400: '#393E46', //darkGrey
+            100: '#EED6D3', //bg
+            200: '#EED6D3', //cream
+            300: '#A49393', //darkGreen
+            400: '#67595E', //text
         },
     },
     textStyles: {

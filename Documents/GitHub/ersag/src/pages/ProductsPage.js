@@ -1,13 +1,18 @@
-import { Tab, TabList, TabPanels, TabPanel, Tabs, Container } from "@chakra-ui/react"
+import { Tab, TabList, TabPanels, TabPanel, Tabs } from "@chakra-ui/react"
 import { source } from '../source'
 import { CardList } from "../components/Card"
+import { Container } from "@chakra-ui/react"
 
 export const ProductsPage = () => {
-    return (<Container maxW='5xl'>
-        <Tabs isFitted variant='enclosed'>
+    return ( <Container maxW='5xl' p='0px'>
+        <Tabs isFitted variant='enclosed' pt={['50px', '75px']}>
             <TabList>
-                <Tab _selected={{ bg: 'brand.200', color: 'brand.300' }} fontSize={['14px', '20px']} >Побутова хімія</Tab>
-                <Tab _selected={{ bg: 'brand.300', color: 'brand.200' }} fontSize={['14px', '20px']} >Засоби особистої гігієни</Tab>
+                <Tab
+                  _selected={{  color: 'brand.400' }}
+                >Побутова хімія</Tab>
+                <Tab
+                  _selected={{  color: 'brand.400' }}
+                >Засоби особистої гігієни</Tab>
             </TabList>
             <TabPanels>
                 <TabPanel>
