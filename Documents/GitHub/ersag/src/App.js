@@ -10,6 +10,7 @@ import {
 } from "react-router-dom"
 import { ProductsPage } from './pages/ProductsPage'
 import { OneProductPage } from './pages/OneProductPage'
+import { WishListPage } from './pages/WishListPage'
 
 
 
@@ -18,6 +19,7 @@ export const App = () => {
     <Route path='/' element={<Common />}>
       <Route path='/' element={<ProductsPage />}></Route>
       <Route path='/product/:id' element={<OneProductPage />}></Route>
+      <Route path='/wishlist' element={<WishListPage/>}></Route>
     </Route>
     
   </Routes></>

@@ -37,8 +37,8 @@ export const HeaderMobile = (props) => {
     const dispatch = useDispatch()
 
     return (<>
-        <Box textStyle='p'
-            className='mdx-prose'
+        <Box 
+           // className='mdx-prose'
             as="header"
             bg="brand.300"
             color='brand.200'
@@ -109,7 +109,7 @@ const HeaderDesktop = (props) => {
                 <Container display='flex' alignItems='center' gridGap={['10px', '20px']} maxW='5xl'>
                     <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
                     <Box display='flex' gridGap={[2, 4]} w='100%'>
-                        <Button bg='red.400' size='sm' onClick={() => dispatch(resetAll())}>reset</Button>
+                        <Button bg='red.400' variant='link' onClick={() => dispatch(resetAll())}>reset</Button>
                         <Link to='/' >Продукти</Link>
                         <Link to='/producer' ><Icon as={GiLaurels} />Виробник</Link>
                         <Link to='/wishlist' ><Icon as={SlHeart } />Бажане</Link>
