@@ -104,9 +104,10 @@ const HeaderDesktop = (props) => {
     const dispatch = useDispatch()
 
     return (<>
-        <Box bg='brand.100'>
-            <Box w='100%' pos='fixed' as="header" bg="brand.300" color='brand.200' zIndex='200'>
-                <Container display='flex' alignItems='center' gridGap={['10px', '20px']} maxW='5xl'>
+            <Box w='100%' pos='fixed'  bg="brand.300" color='brand.200' zIndex='200' p='0px' m='0px'>
+            <Container as="header" display='flex' alignItems='center' ml='auto' mr='auto'
+                gridGap={['10px', '20px']}
+                maxW='5xl'>
                     <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
                     <Box display='flex' gridGap={[2, 4]} w='100%'>
                         <Button bg='red.400' variant='link' onClick={() => dispatch(resetAll())}>reset</Button>
@@ -118,6 +119,5 @@ const HeaderDesktop = (props) => {
                     </Box>
                 </Container>
             </Box>
-        </Box>
     </>)
 }
