@@ -11,6 +11,7 @@ import {
 import { ProductsPage } from './pages/ProductsPage'
 import { OneProductPage } from './pages/OneProductPage'
 import { WishListPage } from './pages/WishListPage'
+import { ProducerPage } from './pages/ProducerPage'
 
 
 
@@ -19,7 +20,8 @@ export const App = () => {
     <Route path='/' element={<Common />}>
       <Route path='/' element={<ProductsPage />}></Route>
       <Route path='/product/:id' element={<OneProductPage />}></Route>
-      <Route path='/wishlist' element={<WishListPage/>}></Route>
+      <Route path='/wishlist' element={<WishListPage />}></Route>
+      <Route path='/producer' element={<ProducerPage/>}></Route>
     </Route>
     
   </Routes></>

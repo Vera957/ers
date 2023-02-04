@@ -8,6 +8,6 @@ export const WishListPage = () => {
 
     return (<Container maxW='5xl' pt={['50px', '75px']} gridGap={['10px', '20px']} ml='auto' mr='auto'
     >
-        <WishList id={wishlist} key={wishlist.id + 'k'} />
+        <WishList wishlist={wishlist} key={wishlist.id + 'k'} />
     </Container>)
 }

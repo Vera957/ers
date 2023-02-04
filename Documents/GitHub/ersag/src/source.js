@@ -48,3 +48,14 @@ export const source = [
         quantity: '',
     }
 ]
+export const sert = {
+    1: 'https://live.staticflickr.com/65535/52668648034_134f925933_w.jpg',
+    2: 'https://live.staticflickr.com/65535/52668360071_8bcea34d75_w.jpg',
+    3: 'https://live.staticflickr.com/65535/52667862622_5c7ce8525b_w.jpg',
+    4: 'https://live.staticflickr.com/65535/52667862647_1e0e2fcf2c_w.jpg',
+    5: 'https://live.staticflickr.com/65535/52667862657_d5b32e4ef1_w.jpg',
+    6: 'https://live.staticflickr.com/65535/52668360141_33c0c9587f_n.jpg',
+    7: 'https://live.staticflickr.com/65535/52668796990_a5df7ffed1_n.jpg',
+    8: 'https://live.staticflickr.com/65535/52668648169_ed254e1864_n.jpg',
+    9: 'https://live.staticflickr.com/65535/52667862757_51bf31f68f_n.jpg',
+}

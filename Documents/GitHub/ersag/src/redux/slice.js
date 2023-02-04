@@ -32,7 +32,7 @@ export const userSlice = createSlice({
             }
         },
         deleteFromBasket(state, action) {
-            const index = state.basket.findIndex(e => e.id === action.payload[0])
+            const index = state.basket.findIndex(e => e.id === action.payload)
             state.basket.splice(index, 1)
         },
         setQuantity(state, action) {
@@ -43,12 +43,13 @@ export const userSlice = createSlice({
             }
         },
         setUserData(state, action) {
-            state.deal.push(action.payload, state.basket)
+            state.deal.push([action.payload, state.basket])
             state.basket = []
         },
         resetAll(state, action) {
             state.basket = []
             state.likes = []
+            state.deal=[]
         },
         deleteFromLikes(state, action) {
             const index = state.likes.findIndex(e => e.id === action.payload)
