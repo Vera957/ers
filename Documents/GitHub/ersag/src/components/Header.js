@@ -20,7 +20,7 @@ import { useDispatch } from "react-redux"
 import { resetAll } from '../redux/slice'
 import { GiLaurels } from 'react-icons/gi'
 import {
-    Link,
+    Link, NavLink
 } from 'react-router-dom'
 export const Header = () => {
     const x = useBreakpoints()
@@ -109,9 +109,9 @@ const HeaderDesktop = (props) => {
                 <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
                 <Box display='flex' gridGap={[2, 4]} w='100%'>
                     <Button bg='red.400' variant='link' onClick={() => dispatch(resetAll())}>reset</Button>
-                    <Link to='/' ><Icon as={SlHeart} mr='0.25em' />Продукти</Link>
-                    <Link to='/producer' ><Icon as={GiLaurels} mr='0.25em' />Виробник</Link>
-                    <Link to='/wishlist' ><Icon as={SlHeart} mr='0.25em' />Бажане</Link>
+                    <NavLink to='/' ><Icon as={SlHeart} mr='0.25em' />Продукти</NavLink>
+                    <NavLink to='/producer' ><Icon as={GiLaurels} mr='0.25em' />Виробник</NavLink>
+                    <NavLink to='/wishlist' ><Icon as={SlHeart} mr='0.25em' />Бажане</NavLink>
                     <Spacer />
                     <ModalCalc />
                 </Box>

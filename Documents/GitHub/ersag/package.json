@@ -2,7 +2,7 @@
   "name": "ersag",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vera957.github.io/ers/",
+  "homepage": "https://vera957.github.io/ersag/",
   "dependencies": {
     "@chakra-ui/react": "^2.4.6",
     "@emotion/react": "^11.10.5",
@@ -12,6 +12,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^8.1.3",
+    "nodemailer": "^6.9.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
