@@ -19,10 +19,12 @@ export const CardHolder = ({ item }) => {
     const dispatch = useDispatch()
     return (<Card bg='whiteAlpha.800'>
         <Link to={`/product/${id}`}>
-            <CardBody >
+            <CardBody  >
                 <Image
                     src={img}
                     alt='damla-500'
+                    ml='auto'
+                    mr='auto'
                 />
                 <Text as='h2' h='3em' textAlign='center' mt={[2, 4]}>{name}</Text>
             </CardBody>

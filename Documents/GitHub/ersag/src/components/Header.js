@@ -12,7 +12,7 @@ import {
     Container,
 } from "@chakra-ui/react"
 import { ModalCalc } from "./ModalCalc"
-import { SlHeart } from "react-icons/sl"
+import { SlHeart, SlStar } from "react-icons/sl"
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useBreakpoints } from '../mediaQuery'
 import { useRef } from "react"
@@ -20,7 +20,7 @@ import { useDispatch } from "react-redux"
 import { resetAll } from '../redux/slice'
 import { GiLaurels } from 'react-icons/gi'
 import {
-    Link,
+    Link, NavLink
 } from 'react-router-dom'
 export const Header = () => {
     const x = useBreakpoints()
@@ -37,8 +37,8 @@ export const HeaderMobile = (props) => {
     const dispatch = useDispatch()
 
     return (<>
-        <Box 
-           // className='mdx-prose'
+        <Box
+            // className='mdx-prose'
             as="header"
             bg="brand.300"
             color='brand.200'
@@ -77,15 +77,13 @@ export const HeaderMobile = (props) => {
                     <DrawerBody>
                         <List spacing={3}>
                             <ListItem>
-                                <Link to='/wishlist' >
-                                     <Icon as={SlHeart} /> 
-                                </Link>
+                                <Link to='/producer' ><Icon as={GiLaurels} ></Icon> Виробник</Link>
                             </ListItem>
                             <ListItem>
-                                <Link to='/producer' >Виробник</Link>
+                                <Link to='/wishlist' ><Icon as={SlHeart} /> Бажане</Link>
                             </ListItem>
                             <ListItem>
-                                
+                                <Link to='/' ><Icon as={SlStar} ></Icon> Продукти</Link>
                             </ListItem>
                             <ListItem>
                                 <ModalCalc />
@@ -104,20 +102,20 @@ const HeaderDesktop = (props) => {
     const dispatch = useDispatch()
 
     return (<>
-        <Box bg='brand.100'>
-            <Box w='100%' pos='fixed' as="header" bg="brand.300" color='brand.200' zIndex='200'>
-                <Container display='flex' alignItems='center' gridGap={['10px', '20px']} maxW='5xl'>
-                    <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
-                    <Box display='flex' gridGap={[2, 4]} w='100%'>
-                        <Button bg='red.400' variant='link' onClick={() => dispatch(resetAll())}>reset</Button>
-                        <Link to='/' >Продукти</Link>
-                        <Link to='/producer' ><Icon as={GiLaurels} />Виробник</Link>
-                        <Link to='/wishlist' ><Icon as={SlHeart } />Бажане</Link>
-                        <Spacer />
-                        <ModalCalc />
-                    </Box>
-                </Container>
-            </Box>
+        <Box w='100%' pos='fixed' bg="brand.300" color='brand.200' zIndex='200' p='0px' m='0px'>
+            <Container as="header" display='flex' alignItems='center' ml='auto' mr='auto'
+                gridGap={['10px', '20px']}
+                maxW='5xl'>
+                <Image src='https://live.staticflickr.com/65535/52624052537_aaaf2890a8_m.jpg' w={['50px', '75px']} ></Image>
+                <Box display='flex' gridGap={[2, 4]} w='100%'>
+                    <Button bg='red.400' variant='link' onClick={() => dispatch(resetAll())}>reset</Button>
+                    <NavLink to='/' ><Icon as={SlHeart} mr='0.25em' />Продукти</NavLink>
+                    <NavLink to='/producer' ><Icon as={GiLaurels} mr='0.25em' />Виробник</NavLink>
+                    <NavLink to='/wishlist' ><Icon as={SlHeart} mr='0.25em' />Бажане</NavLink>
+                    <Spacer />
+                    <ModalCalc />
+                </Box>
+            </Container>
         </Box>
     </>)
 }

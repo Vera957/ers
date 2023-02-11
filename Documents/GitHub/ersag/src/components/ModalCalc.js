@@ -25,7 +25,6 @@ export const ModalCalc = (props) => {
             onClick={onOpen}
             variant='link'
             textStyle='inherit'
-            mr='1rem'
             lefticon={<SlBasket boxSize={['14px', '20px']} />}
         ><Icon as={SlBasket}></Icon> Корзина
         </Link>
